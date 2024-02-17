@@ -24,6 +24,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: #081b29;
 }
 .nav-bar {
   width: 100%;
@@ -60,12 +62,27 @@
   text-decoration: none;
   transition: 0.5s;
   transition-timing-function: ease-in-out;
+  position: relative;
 }
-
 .nav-bar ul li a:hover {
   color: #00abf0;
 }
 
+.nav-bar ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  background-color: #00abf0;
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+  transition: 0.5s;
+}
+.nav-bar ul li a:hover::after {
+  color: #00abf0;
+  width: 100%;
+}
 .nav-bar ul li .home {
   color: #00abf0;
 }
