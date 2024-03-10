@@ -40,6 +40,9 @@
   z-index: 100;
   background-color: #081b29;
 }
+.nav-bar .fa-solid{
+  display: none;
+}
 .nav-bar h3 {
   width: 15%;
   font-size: 35px;
@@ -85,6 +88,12 @@
 }
 .nav-bar ul li .home {
   color: #00abf0;
+}
+.display{
+  display: none;
+}
+.show{
+  display: block;
 }
 
 /* -----------------------------------------------middle content header----------------------------------------------------------- */
@@ -190,21 +199,29 @@
   #navigation .nav-bar {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
   }
   .nav-bar h3 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 25px;
+  }
+  .nav-bar .fa-solid{
+    display: block;
+    cursor: pointer;
   }
   .nav-bar ul {
     display: flex;
-    width: 100%;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: red;
+    height: 100vh;
+    background-color: #081b29;
+    padding: 20px;
+    display: none;
   }
   .nav-bar ul li a {
     font-size: 15px;
