@@ -1,0 +1,495 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 20px;
+  --bgcolor: #081b29;
+  --second-bg-color: #00abf0;
+  --third-bg-color: #0f314a;
+  scroll-behavior: smooth;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+span {
+  color: var(--second-bg-color);
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.header {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bgcolor);
+  grid-template-columns: 1fr;
+  padding: 50px 100px 50px 100px;
+  display: grid;
+  color: white;
+  position: relative;
+  gap: 20px;
+}
+.nav {
+  width: 50%;
+}
+.info {
+  margin-top: 100px;
+}
+.info h1 {
+  font-size: 50px;
+}
+.info h3 {
+  font-size: 40px;
+  margin-top: 15px;
+  color: var(--second-bg-color);
+}
+.aboutme {
+  font-size: larger;
+}
+.header .nav-bar h1 {
+  display: flex;
+  align-items: center;
+  transition: color 0.5s;
+}
+.header .nav-bar h1:hover {
+  color: var(--second-bg-color);
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0 25px 0 50px;
+  z-index: 100;
+  background-color: #081b29;
+}
+.nav-bar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-bar ul li {
+  margin-right: 30px;
+  position: relative;
+}
+.nav-bar ul li::after {
+  content: "";
+  width: 0%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid var(--second-bg-color);
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.nav-bar ul li:hover::after {
+  width: 100%;
+}
+.header .buttons {
+  align-self: center;
+}
+.header .buttons a {
+  font-size: 25px;
+  border: 2px solid var(--second-bg-color);
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.5s;
+  font-weight: 500;
+}
+.header .buttons a:hover {
+  background-color: #00abf0;
+  color: #081b29;
+}
+.header .links-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.header .links-icons a {
+  margin-right: 40px;
+  font-size: 20px;
+  display: block;
+  border: 2px solid var(--second-bg-color);
+  padding: 15px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.header .links-icons a:hover {
+  background-color: var(--second-bg-color);
+  color: var(--bgcolor);
+}
+.header .nav-bar #checkfornav .fa-solid {
+  display: none;
+  transition: 0.5s;
+}
+.header .nav-bar #checkfornav .fa-solid:hover {
+  color: var(--second-bg-color);
+}
+.header .nav-bar .checkbox {
+  display: none;
+}
+@media (max-width: 800px) {
+  .header {
+    gap: 20px;
+    padding: 50px;
+  }
+  .buttons {
+    display: flex;
+  }
+  .buttons a {
+    margin-right: 15px;
+  }
+
+  .header p {
+    font-size: 18px;
+  }
+  .header .nav-bar {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-bar ul {
+    position: absolute;
+    background-color: var(--bgcolor);
+    top: 100px;
+    right: 0;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px 20px 20px 10px;
+    display: none;
+  }
+  .header .nav-bar .checkbox:checked ~ ul {
+    display: block;
+  }
+
+  .nav-bar ul li {
+    margin-bottom: 25px;
+  }
+  .header .nav-bar #checkfornav .fa-solid {
+    display: block;
+    margin-right: 100px;
+  }
+
+  .header .buttons button {
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .header .links-icons a {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .header .nav-bar #checkfornav .fa-solid {
+    margin-top: 45px;
+    margin-right: 50px;
+  }
+  .nav {
+    width: 100%;
+  }
+}
+/* --------------------------------------------------------------------------------------------about-me------------------------------------------------ */
+.about-me {
+  background-color: var(--third-bg-color);
+  padding: 2rem 4rem 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 70px;
+}
+.about-me h1,
+p {
+  color: white;
+}
+.about-me img {
+  width: 250px;
+  height: 250px;
+  justify-self: center;
+  border: 5px solid var(--second-bg-color);
+  border-radius: 50%;
+  padding: 10px;
+}
+.item {
+  justify-self: center;
+}
+.about-me a {
+  font-size: 25px;
+  border: 2px solid var(--second-bg-color);
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.5s;
+  font-weight: 500;
+}
+.about-me a:hover {
+  background-color: #00abf0;
+  color: #081b29;
+}
+/* --------------------------------------------------------------------------education------------------------------------------------------------ */
+#educ,
+.form {
+  display: flex;
+  background-color: var(--bgcolor);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.container {
+  padding: 25px 100px 25px 100px;
+  color: white;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 0px;
+}
+.container h1 {
+  grid-column: 1/3;
+  text-align: center;
+  margin: 15px;
+}
+.degree {
+  border: 2px solid var(--second-bg-color);
+  padding: 15px;
+  border-radius: 15px;
+  transition: background-color 0.5s ease-in;
+  margin: 20px;
+}
+.degree:hover {
+  background-color: rgba(0, 171, 240, 0.1);
+}
+h2 {
+  text-align: center;
+  margin: 15px;
+}
+.degree .date {
+  color: var(--second-bg-color);
+}
+.degree p,
+h3,
+p,
+p {
+  margin-top: 5px;
+}
+
+@media (max-width: 750px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 25px 50px 25px 50px;
+  }
+  .container h1 {
+    grid-column: 1/2;
+  }
+}
+/* ----------------------------------------skillls------------------------------------------------------------------------------- */
+.skillset {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--third-bg-color);
+}
+.skills {
+  background-color: var(--third-bg-color);
+  padding: 25px 50px 25px 50px;
+  color: white;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 50% 50%;
+}
+.skill {
+  border: 2px solid var(--second-bg-color);
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: repeat(2, 1fr);
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  transition: background-color 0.5s ease-in-out;
+}
+.skill:hover {
+  background-color: var(--bgcolor);
+}
+.skill h4 {
+  grid-column: 1/3;
+  margin-bottom: 10px;
+}
+.skill p {
+  margin-bottom: 10px;
+  justify-self: end;
+}
+.skill .barhtml {
+  height: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 171, 240, 1) 0%,
+    rgba(0, 171, 240, 1) 87%,
+    rgba(15, 49, 74, 1) 87%
+  );
+  grid-column: 1/4;
+  border-radius: 15px;
+  outline: 2px solid var(--second-bg-color);
+  outline-offset: 5px;
+}
+.skill .bar {
+  height: 10px;
+  grid-column: 1/4;
+  border-radius: 15px;
+  outline: 2px solid var(--second-bg-color);
+  outline-offset: 5px;
+}
+.skill .barhtml {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 171, 240, 1) 0%,
+    rgba(0, 171, 240, 1) 87%,
+    rgba(15, 49, 74, 1) 87%
+  );
+}
+.skill .barcss {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 171, 240, 1) 0%,
+    rgba(0, 171, 240, 1) 75%,
+    rgba(15, 49, 74, 1) 75%
+  );
+}
+.skill .barjs {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 171, 240, 1) 0%,
+    rgba(0, 171, 240, 1) 45%,
+    rgba(15, 49, 74, 1) 45%
+  );
+}
+.skill .barpy {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 171, 240, 1) 0%,
+    rgba(0, 171, 240, 1) 65%,
+    rgba(15, 49, 74, 1) 65%
+  );
+}
+.skill .barc {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 171, 240, 1) 0%,
+    rgba(0, 171, 240, 1) 78%,
+    rgba(15, 49, 74, 1) 78%
+  );
+}
+.skill .barweb {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 171, 240, 1) 0%,
+    rgba(0, 171, 240, 1) 45%,
+    rgba(15, 49, 74, 1) 45%
+  );
+}
+.skill .barml {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 171, 240, 1) 0%,
+    rgba(0, 171, 240, 1) 45%,
+    rgba(15, 49, 74, 1) 45%
+  );
+}
+.skill .barapp {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 171, 240, 1) 0%,
+    rgba(0, 171, 240, 1) 45%,
+    rgba(15, 49, 74, 1) 45%
+  );
+}
+.skills h1 {
+  grid-column: 1/3;
+  text-align: center;
+}
+@media (max-width: 750px) {
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 25px;
+  }
+  .skills h1 {
+    grid-column: 1/2;
+  }
+}
+
+/* --------------------------------------------------------------------------------contact-me----------------------------------------------------------------- */
+.contact-me {
+  background-color: var(--bgcolor);
+  padding: 25px 50px 25px 50px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1.5fr 1.5fr;
+  color: white;
+  gap: 5px;
+}
+.contact-me h1 {
+  grid-column: 1/3;
+  text-align: center;
+}
+input {
+  display: block;
+  background-color: var(--bgcolor);
+  border: 2px solid var(--second-bg-color);
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 20px;
+  color: white;
+  transition: background-color 0.8s ease-in-out;
+}
+input:hover {
+  background-color: var(--third-bg-color);
+}
+.contact-me textarea {
+  grid-column: 1/3;
+  background-color: #081b29;
+  border: 2px solid var(--second-bg-color);
+  resize: none;
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 20px;
+  color: white;
+  transition: background-color 0.8s ease-in-out;
+}
+.contact-me textarea:hover {
+  background-color: var(--third-bg-color);
+}
+button {
+  width: 200px;
+  padding: 15px;
+  justify-self: center;
+  border-radius: 15px;
+  background-color: #081b29;
+  color: white;
+  font-size: 20px;
+  border: 2px solid var(--second-bg-color);
+  font-weight: 700;
+  transition: 0.5s;
+}
+button:hover {
+  background-color: var(--second-bg-color);
+  color: var(--bgcolor);
+  font-weight: 700;
+}
+@media (max-width: 750px) {
+  .contact-me {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 25px 50px 25px 50px;
+  }
+  .contact-me h1 {
+    grid-column: 1/1;
+  }
+  .contact-me textarea {
+    grid-column: 1/1;
+  }
+}
